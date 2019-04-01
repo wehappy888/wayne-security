@@ -23,7 +23,7 @@
 
     <dependencyManagement>
         <dependencies>
-            <!-- sprng io 版本管理-->
+            <!-- spring io 版本管理-->
             <dependency>
                 <groupId>io.spring.platform</groupId>
                 <artifactId>platform-bom</artifactId>
@@ -32,7 +32,7 @@
                 <scope>import</scope>
             </dependency>
 
-            <!-- Spring Boot 版本管理-->
+            <!-- spring boot 版本管理-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
@@ -50,7 +50,7 @@
                 <scope>import</scope>
             </dependency>
 
-            <!--spring session-->
+            <!--spring session 版本管理-->
             <dependency>
                 <groupId>org.springframework.session</groupId>
                 <artifactId>spring-session-bom</artifactId>
@@ -67,7 +67,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.1</version>
+                <version>3.8.0</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
