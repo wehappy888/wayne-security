@@ -65,7 +65,7 @@ public class UserControllerTest {
     public void whenCreateSuccess() throws Exception {
 
         Date date = new Date();
-        String content = "{\"userName\":\"wayne\",\"password\":\"123456\",\"birthday\":" + date.getTime() + "}";
+        String content = "{\"userName\":\"13008888172\",\"password\":\"123456\",\"birthday\":" + date.getTime() + "}";
 
         String result = mockMvc.perform(post("/user")
                 .contentType(MediaType.APPLICATION_JSON_UTF8)

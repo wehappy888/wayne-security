@@ -9,8 +9,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,7 +51,14 @@ public class UserController {
     }
 
     @PostMapping
-    public User create(@RequestBody User user) {
+    public User create(@Valid @RequestBody User user, BindingResult errors) {
+
+        if (errors.hasErrors()) {
+
+            List<ObjectError> allErrors = errors.getAllErrors();
+            allErrors.forEach(error -> System.out.println(error.getDefaultMessage()));
+        }
+
         System.out.println(user.getBirthday().getTime());
         logger.info("user :{}", new Gson().toJson(user));
 

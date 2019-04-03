@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonView;
 import lombok.Data;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import java.util.Date;
 
 /**
@@ -21,9 +23,12 @@ public class User {
     private String id;
 
     @JsonView(UserSimpleView.class)
+    @NotBlank(message = "用户名不能为空")
+    @Pattern(regexp = "\\d+",message = "用户名格式不正确")
     private String userName;
 
     @JsonView(UserDetailView.class)
+    @NotBlank(message = "密码不能为空")
     private String password;
 
     /**
