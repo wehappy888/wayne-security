@@ -12,5 +12,12 @@
         <module name="wayne-security-demo" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="wayne-security" target="1.8" />
+      <module name="wayne-security-app" target="1.8" />
+      <module name="wayne-security-browser" target="1.8" />
+      <module name="wayne-security-core" target="1.8" />
+      <module name="wayne-security-demo" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

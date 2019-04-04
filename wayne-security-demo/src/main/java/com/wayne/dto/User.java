@@ -2,9 +2,11 @@ package com.wayne.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonView;
+import com.wayne.validator.MyConstraint;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 import java.util.Date;
 
@@ -25,6 +27,7 @@ public class User {
     @JsonView(UserSimpleView.class)
     @NotBlank(message = "用户名不能为空")
     @Pattern(regexp = "\\d+",message = "用户名格式不正确")
+    @MyConstraint(message = "这是一个测试的注解")
     private String userName;
 
     @JsonView(UserDetailView.class)
@@ -36,5 +39,6 @@ public class User {
      */
     @JsonView(UserDetailView.class)
     @JsonFormat
+    @Past(message = "生日必须是过去的时间")
     private Date birthday;
 }
