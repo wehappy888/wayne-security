@@ -3,7 +3,8 @@ package com.wayne.web.controller;
 import com.fasterxml.jackson.annotation.JsonView;
 import com.google.gson.Gson;
 import com.wayne.dto.User;
-import com.wayne.exception.UserNotExistException;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 import org.slf4j.Logger;
@@ -28,7 +29,8 @@ public class UserController {
 
     @GetMapping
     @JsonView(User.UserSimpleView.class)
-    public List<User> userList(@RequestParam(value = "userName", required = false, defaultValue = "wayne") String userName,
+    @ApiOperation(value = "用户列表查询")
+    public List<User> userList(@ApiParam(value = "用户名") @RequestParam(value = "userName", required = false, defaultValue = "wayne") String userName,
                                @PageableDefault(size = 15, page = 1) Pageable page) {
 
         logger.info(ReflectionToStringBuilder.toString(page, ToStringStyle.MULTI_LINE_STYLE));
@@ -40,22 +42,20 @@ public class UserController {
         return users;
     }
 
-//    @GetMapping("/{id:\\d+}")
-//    @JsonView(User.UserDetailView.class)
-//    public User getInfo(@PathVariable(name = "id") String id) {
-//
-//        User user = new User();
-//        user.setUserName("wayne");
-//
-//        return user;
-//    }
-
     @GetMapping("/{id:\\d+}")
     @JsonView(User.UserDetailView.class)
     public User getInfo(@PathVariable(name = "id") String id) {
 
-        throw new UserNotExistException(id);
+        //throw new UserNotExistException(id);
+        //throw new RuntimeException("user is not exist");
+
+        System.out.println("进入getInfo接口");
+        User user = new User();
+        user.setUserName("wayne");
+
+        return user;
     }
+
 
 //    @PostMapping
 //    public User create(@Valid @RequestBody User user, BindingResult errors) {
