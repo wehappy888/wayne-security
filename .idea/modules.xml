@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/wayne-security.iml" filepath="$PROJECT_DIR$/.idea/wayne-security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wayne-security-app/wayne-security-app.iml" filepath="$PROJECT_DIR$/wayne-security-app/wayne-security-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wayne-security-browser/wayne-security-browser.iml" filepath="$PROJECT_DIR$/wayne-security-browser/wayne-security-browser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wayne-security-core/wayne-security-core.iml" filepath="$PROJECT_DIR$/wayne-security-core/wayne-security-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wayne-security-demo/wayne-security-demo.iml" filepath="$PROJECT_DIR$/wayne-security-demo/wayne-security-demo.iml" />
+    </modules>
+  </component>
+</project>
